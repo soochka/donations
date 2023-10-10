@@ -46,7 +46,7 @@
   <h3>  1,970₪</h3>
   <h4>גויסו על ידי 95 תורמים </h4>
   <div class="precent"></div>
-    <div class="precent2"></div>
+
 
 <button class="donate" onclick="window.location.href='https://www.bitpay.co.il/app/share-info?i=202818627589_19eQ8czr'" ></button>
  <button class="donate2" onclick="window.location.href='https://payboxapp.page.link/ipUFvLenAR5oGnND8'" ></button>
@@ -149,28 +149,42 @@
         top:730px;
         left:120px;
     }
-    .precent{
-        width: 250px;
-        height: 20px;
-        background:#e3e1e1;
-        border-radius: 10px;
-        position: absolute;
-        border: grey;
+
+.precent {
+  width: 250px; /* Initial width */
+  height: 20px; /* Set the height or adjust as needed */
+  background-color: #e3e1e1;
+  overflow: hidden;
+  border-radius:10px;
+  position: absolute;
+   border: grey;
         left: 80px;
         top:730px;
-        
-    }
-      .precent2{
-        width: 75px;
-        height: 20px;
-        background:#516E53;
-        border-radius: 10px;
-        position: absolute;
-        border: grey;
-        left: 80px;
-        top:730px;
-        
-    }
+
+}
+
+
+.precent::before {
+  content: '';
+  width: 0;
+  height: 100%;
+  background-color:#516E53 ; /* Color of the right side */
+  position: absolute;
+  top: 0;
+  left: 100%; /* Initial position, outside the parent element */
+  animation: expand 2s linear forwards; /* Customize animation duration */
+}
+
+@keyframes expand {
+  0% {
+    width: 0;
+    left: 100%; /* Start from the right edge */
+  }
+  100% {
+    width: 100%; /* Expand to the full width */
+    left: 60%; /* Reach the left edge */
+  }
+}
     .donate{
         width: 150px;
         height: 40px;
